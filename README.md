@@ -38,7 +38,7 @@
    kubectl apply -f k8s/frontend-service.yaml
    ```
 
-5. Sprawdź uruchomione usłgu
+5. Sprawdź uruchomione usługi
 
    ```
    kubectl get pods           # wyświetl uruchomione pody
@@ -51,3 +51,12 @@
    minikube start
    minikube dashboard
    ```
+
+## Rolling Update: Aktualizacja aplikacji bez przestojów
+
+Monitorowanie stanu wdrażania (postępu aktualizacji)
+
+```
+kubectl rollout status deployment/backend-deployment
+kubectl rollout status deployment/frontend-deployment
+```

@@ -60,3 +60,19 @@ Monitorowanie stanu wdrażania (postępu aktualizacji)
 kubectl rollout status deployment/backend-deployment
 kubectl rollout status deployment/frontend-deployment
 ```
+
+## Rollback
+
+Przywracanie do poprzedniej wersji deploymentu:
+
+```
+kubectl rollout undo deployment/backend-deployment
+kubectl rollout undo deployment/frontend-deployment
+```
+
+Monitorowanie stanu wdrażania (postępu aktualizacji)
+
+```
+kubectl rollout status deployment/backend-deployment
+kubectl rollout status deployment/frontend-deployment
+```

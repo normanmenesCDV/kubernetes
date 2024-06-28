@@ -2,6 +2,8 @@
 
 > Kod aplikacji pochodzi z oficjalnego [repozytorium Dockera](https://github.com/docker/getting-started-app), natomiast podzielono ją na dwie aplikacje - frontend i backend - i wprowadzono w niej kilka nieznacznych zmian
 
+Obrazy Dockerowe zbudowane w ramach niniejszego projektu i wrzucone do Docker Hub znajdują się na [moim profilu](https://hub.docker.com/u/normanmenescdv/).
+
 ## Wdrożenie aplikacji kubernetes
 
 1. Budowanie obrazów dockerowych
@@ -133,3 +135,29 @@ kubectl rollout status deployment/frontend-deployment
    kubectl describe configmaps my-configmap
    kubectl describe secrets my-secrets
    ```
+
+## Screenshots
+
+1. Deployments
+
+   ![Deployments](img/deployments.png)
+
+2. Pods
+
+   ![Pods](img/pods.png)
+
+3. Replica Sets
+
+   ![Replica Sets](img/replicaSets.png)
+
+4. Services
+
+   ![Services](img/services.png)
+
+5. Config
+
+   ![Config](img/config.png)
+
+6. Secrets
+
+   ![Secrets](img/Secrets.png)

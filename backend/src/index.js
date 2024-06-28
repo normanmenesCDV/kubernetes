@@ -10,13 +10,7 @@ const deleteItem = require('./routes/deleteItem');
 app.use(express.json());
 app.use(express.static(__dirname + '/static'));
 
-app.use(
-    cors({
-        origin: 'http://localhost:5000',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type'],
-    }),
-);
+app.use(cors());
 
 app.get('/items', getItems);
 app.post('/items', addItem);

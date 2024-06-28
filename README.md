@@ -87,8 +87,16 @@ kubectl rollout status deployment/frontend-deployment
 
 1. Zainstalowanie `metrics-server`
 
+   a. Oryginalna instalacja
+
    ```
    kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+   ```
+
+   b. Dedykowana instalacja (z wyłączoną weryfikacją certyfikatu TLS)
+
+   ```
+   kubectl apply -f .\k8s\metrics-server.yaml
    ```
 
 2. Wdrożenie HPA
@@ -96,6 +104,19 @@ kubectl rollout status deployment/frontend-deployment
    ```
    kubectl apply -f ./k8s/hpa.yaml
    ```
+
+3. Sprawdzenie działania metryków zasobów:
+
+   a. przy pomocy `kubectl`
+
+   ```
+   kubectl top nodes
+   kubectl top pods --all-namespaces
+   ```
+
+   b. przy pomocy dashboardu
+
+   ![Metryki zasobów](img/metryki-zasobow.png)
 
 ## Zarządzanie konfiguracją i sekretami
 

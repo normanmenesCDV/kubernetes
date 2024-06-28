@@ -1,8 +1,6 @@
 # Projekt Kubernetes
 
-Źródło:
-
-> Aplikacja pochodzi z oficjalnego [repozytorium Dockera](https://github.com/docker/getting-started-app), natomiast podzielono ją na dwie aplikacje - frontend i backend
+> Kod aplikacji pochodzi z oficjalnego [repozytorium Dockera](https://github.com/docker/getting-started-app), natomiast podzielono ją na dwie aplikacje - frontend i backend - i wprowadzono w niej kilka nieznacznych zmian
 
 ## Wdrożenie aplikacji kubernetes
 
@@ -47,9 +45,17 @@
    ```
 
 6. Uruchom minikube
+
    ```
    minikube start
    minikube dashboard
+   ```
+
+7. Wyświetl dane poda
+
+   ```
+   kubectl describe pod <nazwa_poda>   # wyświetl informacje o podzie
+   kubectl logs <nazwa_poda>           # wyświetl logi poda
    ```
 
 ## Rolling Update: Aktualizacja aplikacji bez przestojów
@@ -89,4 +95,20 @@ kubectl rollout status deployment/frontend-deployment
 
    ```
    kubectl apply -f ./k8s/hpa.yaml
+   ```
+
+## Zarządzanie konfiguracją i sekretami
+
+1. Zastosuj plik `ConfigMap` oraz `Secret`
+
+   ```
+   kubectl apply -f .\k8s\configmap.yaml
+   kubectl apply -f .\k8s\secrets.yaml
+   ```
+
+2. Wyświetl dane konfiguracyjne
+
+   ```
+   kubectl describe configmaps my-configmap
+   kubectl describe secrets my-secrets
    ```

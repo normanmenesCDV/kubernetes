@@ -32,10 +32,10 @@
 4. Wdrożenie aplikacji w Kubernetes
 
    ```
-   kubectl apply -f k8s/backend-deployment.yaml
-   kubectl apply -f k8s/backend-service.yaml
-   kubectl apply -f k8s/frontend-deployment.yaml
-   kubectl apply -f k8s/frontend-service.yaml
+   kubectl apply -f ./k8s/backend-deployment.yaml
+   kubectl apply -f ./k8s/backend-service.yaml
+   kubectl apply -f ./k8s/frontend-deployment.yaml
+   kubectl apply -f ./k8s/frontend-service.yaml
    ```
 
 5. Sprawdź uruchomione usługi
@@ -70,9 +70,23 @@ kubectl rollout undo deployment/backend-deployment
 kubectl rollout undo deployment/frontend-deployment
 ```
 
-Monitorowanie stanu wdrażania (postępu aktualizacji)
+Monitorowanie stanu wdrażania (postępu przywracania)
 
 ```
 kubectl rollout status deployment/backend-deployment
 kubectl rollout status deployment/frontend-deployment
 ```
+
+## Skalowanie w zależności od obiążenia
+
+1. Zainstalowanie `metrics-server`
+
+   ```
+   kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+   ```
+
+2. Wdrożenie HPA
+
+   ```
+   kubectl apply -f ./k8s/hpa.yaml
+   ```

@@ -4,7 +4,7 @@ metadata:
   name: backend-deployment
   namespace: default
 spec:
-  replicas: 3
+  replicas: 1 # może być tylko jedna replika, gdyż bazy danych pomiędzy podami nie będą się komunikowały, a baza musi przechowywać takie same wartości
   revisionHistoryLimit: 3
   selector:
     matchLabels:

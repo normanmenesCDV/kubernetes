@@ -160,4 +160,4 @@ kubectl rollout status deployment/frontend-deployment
 
 6. Secrets
 
-   ![Secrets](img/Secrets.png)
+   ![Secrets](img/secrets.png)
